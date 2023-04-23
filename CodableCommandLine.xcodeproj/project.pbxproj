@@ -11,6 +11,8 @@
 		B427C29229D3404200AA81CD /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B427C29129D3404200AA81CD /* Codable+Extension.swift */; };
 		B4353F84289FB56500E35A74 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4353F83289FB56500E35A74 /* main.swift */; };
 		B47E7D4729C8BD09007A7002 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E7D4629C8BD09007A7002 /* Diff.swift */; };
+		B4828B0C29F57696000B6D5B /* SouceJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4828B0A29F57695000B6D5B /* SouceJSONEncoder.swift */; };
+		B4828B0D29F57696000B6D5B /* SouceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4828B0B29F57695000B6D5B /* SouceCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +38,8 @@
 		B47E7D3F29C8B93D007A7002 /* JSONEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
 		B47E7D4029C8B93D007A7002 /* JSONSerialization+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONSerialization+Parser.swift"; sourceTree = "<group>"; };
 		B47E7D4629C8BD09007A7002 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		B4828B0A29F57695000B6D5B /* SouceJSONEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SouceJSONEncoder.swift; sourceTree = "<group>"; };
+		B4828B0B29F57695000B6D5B /* SouceCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SouceCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				B47E7D3D29C8B93D007A7002 /* Codable.swift */,
+				B4828B0B29F57695000B6D5B /* SouceCodable.swift */,
+				B4828B0A29F57695000B6D5B /* SouceJSONEncoder.swift */,
 				B47E7D3E29C8B93D007A7002 /* JSONDecoder.swift */,
 				B47E7D3F29C8B93D007A7002 /* JSONEncoder.swift */,
 				B47E7D3C29C8B93D007A7002 /* JSONSerialization.swift */,
@@ -139,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4828B0D29F57696000B6D5B /* SouceCodable.swift in Sources */,
+				B4828B0C29F57696000B6D5B /* SouceJSONEncoder.swift in Sources */,
 				B427C29229D3404200AA81CD /* Codable+Extension.swift in Sources */,
 				B47E7D4729C8BD09007A7002 /* Diff.swift in Sources */,
 				B427C28E29D33F7100AA81CD /* DocumentReader.swift in Sources */,
