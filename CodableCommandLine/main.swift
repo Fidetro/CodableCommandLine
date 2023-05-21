@@ -76,10 +76,10 @@ do{
     
     let data = jsonstr.data(using: .utf8)!
 //    let data = try JSONSerialization.data(withJSONObject: ["name":"karimzhang","sex":123])
-    let person = try SourceJSONDecoder().decode(NewPerson.self, from: data)
+    let person = try SourceJSONDecoder().decode(Date.self, from: data)
     let _ = try JSONEncoder().encode(person)
-    person.test()
-    print(person.name)
+//    person.test()
+//    print(person.name)
     
     
    var doc = DocumentReader.init(array: Array(data))

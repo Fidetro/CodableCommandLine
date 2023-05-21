@@ -2389,6 +2389,10 @@ private extension __JSONDecoder {
         case .deferredToDate:
             self.storage.push(container: value)
             defer { self.storage.popContainer() }
+            /*
+             会走到 func decode(_ type: Double.Type)
+             然后 -> func unbox(_ value: Any, as type: Double.Type)
+             */
             return try Date(from: self)
 
         case .secondsSince1970:
