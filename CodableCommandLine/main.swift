@@ -11,7 +11,7 @@ public protocol AADecoder {
 }
 class NewPerson: Codable {
     
-    var name : String?
+    var name : String = ""
     var sex : Int = 0
     
     enum CodingKeys: String, CodingKey {
@@ -21,18 +21,15 @@ class NewPerson: Codable {
     
 //    required init(from decoder: Decoder) throws {
 //        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        print(values)
-//        
-//        name = try values.decode(String?.self, forKey: .name)
-//        sex = (try? values.decode(Int.self, forKey: .sex)) ?? 0
-//   
+//        var nameValue = try values.decode(String.self, forKey: .name)
+//        sex = try values.decode(Int.self, forKey: .sex)
 //    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-        try container.encode(sex, forKey: .sex)
-    }
+//    
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(name, forKey: .name)
+//        try container.encode(sex, forKey: .sex)
+//    }
     
 //    func container<Key>(keyedBy type: Key.Type) throws -> KeyedDecodingContainer<Key> where Key : CodingKey {
 //
@@ -64,30 +61,52 @@ class NewPerson: Codable {
 //
 //}
 
-do{
-    
-    let jsonstr = """
-    {
-    "name":"111.1",
-    "sex":1    
+
+
+func test1() {
+    do{
+        
+        let jsonstr = """
+        {
+        "name":"111.1",
+        "sex":1
+        }
+        """
+        
+        
+        let data = jsonstr.data(using: .utf8)!
+    //    let data = try JSONSerialization.data(withJSONObject: ["name":"karimzhang","sex":123])
+        let person = try SourceJSONDecoder().decode(Date.self, from: data)
+        let _ = try JSONEncoder().encode(person)
+    //    person.test()
+    //    print(person.name)
+        
+    }catch{
+        print(error)
     }
-    """
-    
-    
-    let data = jsonstr.data(using: .utf8)!
-//    let data = try JSONSerialization.data(withJSONObject: ["name":"karimzhang","sex":123])
-    let person = try SourceJSONDecoder().decode(Date.self, from: data)
-    let _ = try JSONEncoder().encode(person)
-//    person.test()
-//    print(person.name)
-    
-    
-   var doc = DocumentReader.init(array: Array(data))
-    try? doc.consumeWhitespace()
-}catch{
-    print(error)
 }
 
+func test2() {
+    do{
+        
+        let jsonstr = """
+        {
+        "name":"asdasd",
+        "sex":1
+        }
+        """
+        
+        
+        let data = jsonstr.data(using: .utf8)!
+    //    let data = try JSONSerialization.data(withJSONObject: ["name":"karimzhang","sex":123])
+        let person = try SourceJSONDecoder().decode(NewPerson.self, from: data)
+        let _ = try JSONEncoder().encode(person)
+    }catch{
+        print(error)
+    }
+}
+
+test2()
 extension NewPerson: AADecoder {
     func test() {
         
